@@ -59,15 +59,19 @@ body {
   background: var(--color-primary);
   color: var(--color-bg);
 }
-.array-container .button-container {
+.button-container {
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
 }
 
 /* =================== array styles ================*/
 .array-container{
-  position: absolute;
-  left: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  flex-wrap: nowrap; /* Prevent wrapping */
 }
 .array-bar{
   width: 2px;
