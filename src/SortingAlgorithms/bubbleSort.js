@@ -1,12 +1,11 @@
 export const getBubbleSort = (array) => {
     const animations = [];
     if (array.length <= 1) return array;
-    const auxArr = array.slice();
-    bubbleSort(array, auxArr, animations);
+    bubbleSort(array, animations);
     return animations;
   };
 
-  function bubbleSort(arr, auxArr, animations) {
+  function bubbleSort(arr, animations) {
     const len = arr.length;
     for (let i = 0; i < len - 1; i++) {
         for (let j = 0; j < len - 1 - i; j++) {
