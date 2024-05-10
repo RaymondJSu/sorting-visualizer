@@ -1,23 +1,23 @@
 export const getMergeSort = (array) => {
     const animations = [];
     if (array.length <= 1) return array;
-    const helpArr = array.slice();
-    mergeSortHelper(array, 0, array.length - 1, helpArr, animations);
+    const auxArr = array.slice();
+    mergeSort(array, 0, array.length - 1, auxArr, animations);
     return animations;
   };
 
-  function mergeSortHelper(
+  function mergeSort(
     arr,
     start,
     end,
-    helpArr,
+    auxArr,
     animations,
   ){
     if (start === end) return;
     const mid = Math.floor((start + end) / 2);
-    mergeSortHelper(helpArr, start, mid, arr, animations);
-    mergeSortHelper(helpArr, mid + 1, end, arr, animations);
-    merge(arr, start, mid, end, helpArr, animations)
+    mergeSort(auxArr, start, mid, arr, animations);
+    mergeSort(auxArr, mid + 1, end, arr, animations);
+    merge(arr, start, mid, end, auxArr, animations)
   }
 
   function merge(
@@ -25,7 +25,7 @@ export const getMergeSort = (array) => {
     start,
     mid,
     end,
-    helpArr,
+    auxArr,
     animations,
   ){
     let i = start;
@@ -37,31 +37,31 @@ export const getMergeSort = (array) => {
       // These are the values that we're comparing; we push them a second
       // time to revert their color.
       animations.push([i, j]);
-      if (helpArr[i] <= helpArr[j]) {
+      if (auxArr[i] <= auxArr[j]) {
         // We overwrite the value at index k in the original array with the
         // value at index i in the auxiliary array.
-        animations.push([k, helpArr[i]]);
-        arr[k++] = helpArr[i++];
+        animations.push([k, auxArr[i]]);
+        arr[k++] = auxArr[i++];
       } else {
         // We overwrite the value at index k in the original array with the
         // value at index j in the auxiliary array.
-        animations.push([k, helpArr[j]]);
-        arr[k++] = helpArr[j++];
+        animations.push([k, auxArr[j]]);
+        arr[k++] = auxArr[j++];
       }
     }
 
     while (i <= mid) {
       animations.push([i, i]);
       animations.push([i, i]);
-      animations.push([k, helpArr[i]]);
-      arr[k++] = helpArr[i++];
+      animations.push([k, auxArr[i]]);
+      arr[k++] = auxArr[i++];
     }
 
     while (j <= end) {
       animations.push([j, j]);
       animations.push([j, j]);
-      animations.push([k, helpArr[j]]);
-      arr[k++] = helpArr[j++];
+      animations.push([k, auxArr[j]]);
+      arr[k++] = auxArr[j++];
     }
   }
 
