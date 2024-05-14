@@ -3,6 +3,8 @@
 Welcome to my sorting visualizer project on GitHub!\
 \
 This project offers a hands-on exploration of sorting algorithms through interactive visualizations built with React.js and Node.js. Dive into the inner workings of algorithms like Bubble Sort, Merge Sort, and Quick Sort, witnessing data manipulation in real-time.
+\
+Please have a [look](http://raymondJSu.github.io/sorting-visualizer/) if you are interested!
 
 
 # Getting Started with Create React App
