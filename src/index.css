@@ -60,6 +60,7 @@ body {
   color: var(--color-bg);
 }
 .button-container {
+  background: var(--color-bg-variant);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -68,6 +69,7 @@ body {
 
 /* =================== array styles ================*/
 .array-container{
+  background: var(--color-bg);
   display: flex;
   justify-content: center;
   align-items: baseline;
