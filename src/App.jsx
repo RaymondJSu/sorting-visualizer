@@ -86,13 +86,19 @@ export default class SortingVisualizer extends React.Component{
               barTwoStyle.height = `${barOneHeight}px`;
             }, i * ANIMATION_SPEED_MS);
           } else if (actionType === 'highlight') {
-            // const barOneStyle = arrayBars[barOneIdx].style;
-            // const barTwoStyle = arrayBars[barTwoIdx].style;
-            // const color = i % 3 === 0 ? SECONDARY_COLOR : PRIMARY_COLOR;
-            // setTimeout(() => {
-            //   barOneStyle.backgroundColor = color;
-            //   barTwoStyle.backgroundColor = color;
-            // }, i * ANIMATION_SPEED_MS);
+            setTimeout(() => {
+              const barOneStyle = arrayBars[barOneIdx].style;
+              const barTwoStyle = arrayBars[barTwoIdx].style;
+              barOneStyle.backgroundColor = SECONDARY_COLOR;
+              barTwoStyle.backgroundColor = SECONDARY_COLOR;
+            }, i * ANIMATION_SPEED_MS);
+          } else if (actionType === 'revert') {
+            setTimeout(() => {
+              const barOneStyle = arrayBars[barOneIdx].style;
+              const barTwoStyle = arrayBars[barTwoIdx].style;
+              barOneStyle.backgroundColor = PRIMARY_COLOR;
+              barTwoStyle.backgroundColor = PRIMARY_COLOR;
+            }, i * ANIMATION_SPEED_MS);
           }
       }
       setTimeout(() => {

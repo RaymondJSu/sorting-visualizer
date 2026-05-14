@@ -22,7 +22,7 @@ function partition(arr, start, end, animations) {
 
     for (let i = start; i < end; i++) {
         animations.push([i, -1, end, -1, 'highlight']); // Highlight comparison
-        animations.push([i, -1, end, -1, 'highlight']); // Revert comparison highlight
+        animations.push([i, -1, end, -1, 'revert']); // Revert comparison highlight
         if (arr[i] < pivot) {
             animations.push([i, arr[i], pivotIndex, arr[pivotIndex], 'swap']); // Swap
             
