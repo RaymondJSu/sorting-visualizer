@@ -1,6 +1,6 @@
 export const getQuickSort = (array) => {
     const animations = [];
-    if (array.length <= 1) return array;
+    if (array.length <= 1) return animations;
     quickSort(array, 0, array.length - 1, animations);
     return animations;
 }

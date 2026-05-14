@@ -1,6 +1,6 @@
 export const getBubbleSort = (array) => {
     const animations = [];
-    if (array.length <= 1) return array;
+    if (array.length <= 1) return animations;
     bubbleSort(array, animations);
     return animations;
   };

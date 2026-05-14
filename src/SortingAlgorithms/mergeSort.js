@@ -1,6 +1,6 @@
 export const getMergeSort = (array) => {
     const animations = [];
-    if (array.length <= 1) return array;
+    if (array.length <= 1) return animations;
     const auxArr = array.slice();
     mergeSort(array, 0, array.length - 1, auxArr, animations);
     return animations;
@@ -64,4 +64,3 @@ export const getMergeSort = (array) => {
       arr[k++] = auxArr[j++];
     }
   }
-

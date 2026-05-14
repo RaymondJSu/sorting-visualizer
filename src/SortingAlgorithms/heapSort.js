@@ -1,6 +1,6 @@
 export const getHeapSort = (array) => {
     const animations = [];
-    if (array.length <= 1) return array;
+    if (array.length <= 1) return animations;
     heapSort(array, animations);
     return animations;
 }
